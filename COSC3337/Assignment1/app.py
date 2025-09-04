@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-"""
-Parts Dataset Manager (CLI)
-- Loads /mnt/data/part.tbl (TPC-H style pipe-delimited) at startup
-- Lets you Insert, Search (by PARTKEY/NAME/BRAND/TYPE), Update (by PARTKEY), Delete (by PARTKEY)
-- Saves back to /mnt/data/part.tbl after each change; creates a one-time backup at /mnt/data/part.backup.tbl
-"""
-
 import csv
 import os
 import sys

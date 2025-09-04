@@ -19,8 +19,8 @@ Delimited by `|`. Lines may have a trailing `|` in the original TPC-H data; this
 
 ## Files
 
-- `/mnt/data/part.tbl` – your working dataset (loaded/saved by the app)
-- `/mnt/data/part.backup.tbl` – a one-time backup created on first run
+- `./part.tbl` – your working dataset (loaded/saved by the app)
+- `./part.backup.tbl` – a one-time backup created on first run
 - `app.py` – the CLI application
 
 ## How to Run
@@ -34,10 +34,10 @@ chmod +x app.py
 ```
 
 ### Option B — Choose a different dataset path
-By default, the app uses `/mnt/data/part.tbl`. To point to your own file:
+By default, the app uses `./part.tbl`. To point to your own file:
 ```bash
-export PARTS_DATA_PATH="/path/to/part.tbl"
-export PARTS_BACKUP_PATH="/path/to/part.backup.tbl"
+export PARTS_DATA_PATH="./part.tbl"
+export PARTS_BACKUP_PATH="./part.backup.tbl"
 python3 app.py
 ```
 
@@ -76,27 +76,6 @@ Menu:
   - Saves on explicit "Save", after every mutation (Insert/Update/Delete), and when exiting (incl. Ctrl+C with best effort).
 - **Extensibility**: You can easily add more search filters or export features (JSON/CSV) by reusing the `Part` model and the reader/writer functions.
 
-## Compile?
 
-Python is interpreted—no compilation needed. If you prefer Java, see "Java Alternative" below.
 
-## Java Alternative (Outline)
-
-If you want to implement in Java instead:
-- Use `java.nio.file.Files` to read/write text files.
-- Parse with `String.split("\\|",-1)` and map to a `Part` POJO.
-- Keep a `List<Part>` in memory.
-- Provide a simple console UI with `Scanner`.
-- Save after each change and on exit. Consider making an initial backup like the Python version.
-
-## Testing Tips
-
-- Try searching for existing `PARTKEY` values from your dataset to verify parsing.
-- Insert a new row and confirm it appears after re-running the program.
-- Update price/size for a `PARTKEY` and verify persistence.
-- Delete a `PARTKEY` and confirm it’s gone after restart.
-
----
-
-**Author(s)**: Your group name here  
-**License**: MIT (or your choice)
+**Author(s)**: Rifat Abrar Jowad
