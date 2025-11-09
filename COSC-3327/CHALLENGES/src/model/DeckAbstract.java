@@ -1,31 +1,6 @@
 package model;
 
-import static model.Rank.ACE;
-import static model.Rank.EIGHT;
-import static model.Rank.FIVE;
-import static model.Rank.FOUR;
-import static model.Rank.JACK;
-import static model.Rank.KING;
-import static model.Rank.NINE;
-import static model.Rank.QUEEN;
-import static model.Rank.SEVEN;
-import static model.Rank.SIX;
-import static model.Rank.TEN;
-import static model.Rank.THREE;
-import static model.Rank.TWO;
-import static model.Suit.CLUBS;
-import static model.Suit.DIAMONDS;
-import static model.Suit.HEARTS;
-import static model.Suit.SPADES;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import combinatorics.Permutation;
-import combinatorics.PermutationImpl_Kart;
 
 public abstract class DeckAbstract implements Deck
 {
